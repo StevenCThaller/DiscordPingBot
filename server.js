@@ -11,5 +11,3 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         if(channel.parentID == '750798247429275718');
     }
 })
-
-console.log("Hello there");
