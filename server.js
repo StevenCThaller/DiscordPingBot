@@ -9,7 +9,8 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 
     if(channel && channel.name.includes('➕') && channel.name.includes('help')){
         let user =channel.guild.members.cache.get(newMember.id);
-        if(!user.displayName.includes('TA_') && !user.displayName.includes('Instructor_')){
+        
+        if(user.roles.highest.name != "Instruction" && user.roles.highest.name != "Teacher Assistant"){
             client.channels.cache.get('738524948431241217').send(`@here ${user.displayName} needs help!`);
         }
     }
