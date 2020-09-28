@@ -14,13 +14,13 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     // if(channel && channel.name.includes('➕') && channel.name.includes('help')){
         let user = channel.guild.members.cache.get(newMember.id);
         
-        if(user.roles.highest.name == "Student"){
+        if(user.roles.highest.name == "csharp"){
             client.channels.cache.get('759212747505532929').send(`@here ${user.displayName} needs help!`);
         }
     } else if(channel && channel.id == '758755292359295016') {
         let user = channel.guild.members.cache.get(newMember.id);
         
-        if(user.roles.highest.name == "Student"){
+        if(user.roles.highest.name == "java"){
             client.channels.cache.get('759213210729185360').send(`@here ${user.displayName} needs help!`);
         }
     }
