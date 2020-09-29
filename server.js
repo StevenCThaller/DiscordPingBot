@@ -9,18 +9,20 @@ client.login(config.BOT_TOKEN);
 client.on('voiceStateUpdate', (oldMember, newMember) => {
     let channel = newMember.guild.channels.cache.get(newMember.channelID);
     
-
+    
     if(channel && channel.id == '758755349288452106'){
     // if(channel && channel.name.includes('➕') && channel.name.includes('help')){
         let user = channel.guild.members.cache.get(newMember.id);
+        const roles = user.roles.cache.array()
         
-        if(user.roles.highest.name == "csharp"){
+        // user.roles.cache.array().forEach(role => console.log(role.name));
+        if(roles.some(r => r.name === 'Student')){
             client.channels.cache.get('759212747505532929').send(`@here ${user.displayName} needs help!`);
         }
     } else if(channel && channel.id == '758755292359295016') {
         let user = channel.guild.members.cache.get(newMember.id);
-        
-        if(user.roles.highest.name == "java"){
+        const roles = user.roles.cache.array()
+        if(roles.some(r => r.name === 'Student')){
             client.channels.cache.get('759213210729185360').send(`@here ${user.displayName} needs help!`);
         }
     }
